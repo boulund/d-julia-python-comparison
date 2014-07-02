@@ -1,4 +1,3 @@
-#!/usr/bin/env julia
 #######################################
 Performance comparison D, Julia, Python
 #######################################
@@ -155,7 +154,4 @@ $ time ./count_fasta.py /shared/genbank/nt
 
 real    7m15.199s
 user    7m2.952s
-sys     0m11.224s                                                                           
-
-
-
+sys     0m11.224s
