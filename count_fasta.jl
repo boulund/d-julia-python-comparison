@@ -9,28 +9,15 @@ function read_fasta(filename::String)
     # Read a FASTA file iteratively and count the number 
     # of sequences and their respective lengths. 
     # The file can be gzipped.
-    numseq = 0
-    seqlen = 0 
     totlen = 0
 
     fr = FastaReader(filename)
     for (header, seq) in fr
-        numseq += 1
-        seqlen += length(seq)
+        totlen += length(seq)
     end
-    avg = seqlen/numseq
+    numseq = fr.num_parsed
+    avg = totlen/numseq
     println("$numseq $avg")
 end
 
-@time read_fasta(ARGS[1])
-@time read_fasta(ARGS[1])
-@time read_fasta(ARGS[1])
-@time read_fasta(ARGS[1])
-@time read_fasta(ARGS[1])
-@time read_fasta(ARGS[1])
-@time read_fasta(ARGS[1])
-@time read_fasta(ARGS[1])
-@time read_fasta(ARGS[1])
-@time read_fasta(ARGS[1])
-@time read_fasta(ARGS[1])
-
+read_fasta(ARGS[1])
